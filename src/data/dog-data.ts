@@ -1,6 +1,7 @@
 import Dog from './dog';
+import { v4 as uuidv4 } from 'uuid';
 
-const dogs: Array<Dog> = [
+const dogData: Array<Dog> = [
 	{
 		name: 'Floofus',
 		species: 'Puppy',
@@ -10,7 +11,7 @@ const dogs: Array<Dog> = [
 	{
 		name: 'Doofus',
 		species: 'Doggo',
-		favFoods: ['porridge, dog food'],
+		favFoods: ['porridge', 'dog food'],
 		birthYear: 2010,
 	},
 	{
@@ -20,3 +21,7 @@ const dogs: Array<Dog> = [
 		birthYear: 2015,
 	},
 ];
+
+dogData.forEach(dog => dog.id = uuidv4());
+
+export default dogData;
